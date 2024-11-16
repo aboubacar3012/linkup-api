@@ -1,0 +1,67 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+// prisma/schema.prisma
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  // uncomment next line if you use Prisma <5.10
+  // directUrl = env("DATABASE_URL_UNPOOLED")
+}
+
+/// The User model represents a user in the application.
+model User {
+  id                  String         @id @default(uuid())
+  first_name          String?
+  last_name           String?
+  date_of_birth       String?
+  email               String         @unique @map("email")
+  profile_picture_url String?
+  description         String?
+  interests           String[]
+  phone               String?
+  company             String?
+  social_links        SocialLink[]
+  skills              String[]
+  login_histories     LoginHistory[]
+  auth_providers      AuthProvider[]
+  is_verified         Boolean        @default(false)
+  is_profile_complete Boolean        @default(false)
+  is_premium          Boolean        @default(false)
+  is_active           Boolean        @default(true)
+  created_at          DateTime       @default(now())
+  updated_at          DateTime       @updatedAt
+}
+
+/// The LoginHistory model represents a record of a user's login.
+model LoginHistory {
+  id              String   @id @default(uuid())
+  provider_name   String
+  login_timestamp DateTime @default(now())
+  user            User?    @relation(fields: [user_id], references: [id])
+  user_id         String?  @map("user_id")
+}
+
+/// The AuthProvider model represents an authentication provider for a user.
+model AuthProvider {
+  id               String   @id @default(uuid())
+  provider_name    String
+  provider_user_id String?
+  email            String?  @map("email")
+  password         String?
+  access_token     String?
+  refresh_token    String?
+  user             User?    @relation(fields: [user_id], references: [id])
+  user_id          String?
+  created_at       DateTime @default(now())
+}
+
+/// The SocialLink model represents a social media link for a user.
+model SocialLink {
+  id       String  @id @default(uuid())
+  platform String
+  url      String
+  user     User?   @relation(fields: [user_id], references: [id])
+  user_id  String?
+}
