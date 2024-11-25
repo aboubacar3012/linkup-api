@@ -19,6 +19,11 @@ export class CreateUserDto {
 
   @ApiPropertyOptional()
   @IsOptional()
+  @IsString()
+  title?: string;
+
+  @ApiPropertyOptional()
+  @IsOptional()
   @IsDateString()
   date_of_birth?: string;
 

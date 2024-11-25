@@ -24,6 +24,11 @@ export class UpdateUserDto extends PartialType(CreateUserDto) {
   @IsDateString()
   date_of_birth?: string;
 
+  @ApiPropertyOptional()
+  @IsOptional()
+  @IsString()
+  title?: string;
+
   @ApiProperty()
   @IsEmail()
   email: string;

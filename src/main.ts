@@ -8,6 +8,14 @@ async function bootstrap() {
 
   app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
 
+  // Activer CORS pour tous les appareils
+  app.enableCors({
+    origin: '*',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
+  });
+
   // ############### Swagger ################
   const config = new DocumentBuilder()
     .setTitle('Linkup API')

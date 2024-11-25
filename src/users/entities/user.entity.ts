@@ -15,6 +15,9 @@ export class UserEntity implements User {
   last_name: string;
 
   @ApiProperty()
+  title: string;
+
+  @ApiProperty()
   date_of_birth: string;
 
   @ApiProperty()

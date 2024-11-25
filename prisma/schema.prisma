@@ -16,12 +16,16 @@ model User {
   first_name          String?
   last_name           String?
   date_of_birth       String?
+  title               String?
   email               String         @unique @map("email")
+  show_email          Boolean        @default(false)
   profile_picture_url String?
   description         String?
   interests           String[]
   phone               String?
+  show_phone          Boolean        @default(false)
   company             String?
+  show_company        Boolean        @default(false)
   social_links        SocialLink[]
   skills              String[]
   login_histories     LoginHistory[]
