@@ -24,6 +24,9 @@ export class UserEntity implements User {
   email: string;
 
   @ApiProperty()
+  show_email: boolean;
+
+  @ApiProperty()
   profile_picture_url: string;
 
   @ApiProperty()
@@ -36,7 +39,13 @@ export class UserEntity implements User {
   phone: string;
 
   @ApiProperty()
+  show_phone: boolean;
+
+  @ApiProperty()
   company: string;
+
+  @ApiProperty()
+  show_company: boolean;
 
   @ApiProperty()
   skills: string[];
