@@ -14,7 +14,8 @@ async function main() {
       last_name: 'Doe',
       date_of_birth: '1990-01-01',
       email: 'john.doe@example.com',
-      profile_picture_url: 'https://example.com/john.jpg',
+      profile_picture_url:
+        'https://images.unsplash.com/photo-1651684215020-f7a5b6610f23?q=80&w=3538&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       title: 'Software Developer',
       description:
         'Experienced Software Developer with a passion for coding and music. Skilled in JavaScript and TypeScript.',
@@ -22,6 +23,9 @@ async function main() {
       phone: '123-456-7890',
       company: 'Tech Corp',
       skills: ['JavaScript', 'TypeScript'],
+      show_email: true,
+      show_phone: false,
+      show_company: true,
     },
     {
       id: 'user-2',
@@ -29,7 +33,8 @@ async function main() {
       last_name: 'Smith',
       date_of_birth: '1985-05-15',
       email: 'jane.smith@example.com',
-      profile_picture_url: 'https://example.com/jane.jpg',
+      profile_picture_url:
+        'https://images.unsplash.com/photo-1502767089025-6572583495b1',
       title: 'Project Manager',
       description:
         'Project Manager with a strong background in management and communication. Enjoys reading in her free time.',
@@ -37,6 +42,9 @@ async function main() {
       phone: '987-654-3210',
       company: 'Business Inc',
       skills: ['Management', 'Communication'],
+      show_email: true,
+      show_phone: true,
+      show_company: false,
     },
     {
       id: 'user-3',
@@ -44,7 +52,8 @@ async function main() {
       last_name: 'Johnson',
       date_of_birth: '1992-07-20',
       email: 'alice.johnson@example.com',
-      profile_picture_url: 'https://example.com/alice.jpg',
+      profile_picture_url:
+        'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       title: 'UX Designer',
       description:
         'Creative UX Designer with a passion for design and art. Proficient in UX Design and Photoshop.',
@@ -52,6 +61,9 @@ async function main() {
       phone: '555-123-4567',
       company: 'Creative Studio',
       skills: ['UX Design', 'Photoshop'],
+      show_email: false,
+      show_phone: true,
+      show_company: true,
     },
     {
       id: 'user-4',
@@ -59,7 +71,8 @@ async function main() {
       last_name: 'Brown',
       date_of_birth: '1988-11-30',
       email: 'bob.brown@example.com',
-      profile_picture_url: 'https://example.com/bob.jpg',
+      profile_picture_url:
+        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       title: 'Data Scientist',
       description:
         'Data Scientist with expertise in Python and Machine Learning. Passionate about data and machine learning.',
@@ -67,6 +80,9 @@ async function main() {
       phone: '444-987-6543',
       company: 'Data Solutions',
       skills: ['Python', 'Machine Learning'],
+      show_email: true,
+      show_phone: false,
+      show_company: false,
     },
     {
       id: 'user-5',
@@ -74,7 +90,8 @@ async function main() {
       last_name: 'Davis',
       date_of_birth: '1995-03-25',
       email: 'charlie.davis@example.com',
-      profile_picture_url: 'https://example.com/charlie.jpg',
+      profile_picture_url:
+        'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       title: 'Marketing Specialist',
       description:
         'Marketing Specialist with a knack for SEO and content creation. Loves traveling and exploring new places.',
@@ -82,6 +99,9 @@ async function main() {
       phone: '333-222-1111',
       company: 'Marketing Experts',
       skills: ['SEO', 'Content Creation'],
+      show_email: false,
+      show_phone: true,
+      show_company: true,
     },
   ];
 
@@ -124,14 +144,6 @@ async function main() {
       provider_name: AuthProviderName.EMAIL,
       provider_user_id: null,
       email: 'bob.brown@example.com',
-      user_id: 'user-4',
-      password,
-    },
-    {
-      id: 'auth-5-email',
-      provider_name: AuthProviderName.EMAIL,
-      provider_user_id: null,
-      email: 'charlie.davis@example.com',
       user_id: 'user-5',
       password,
     },
